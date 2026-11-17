@@ -1,0 +1,127 @@
+\documentclass[UTF8,11pt,a4paper,openany,fontset=fandol]{ctexbook}
+
+\usepackage[a4paper,top=2.3cm,bottom=2.2cm,left=2.15cm,right=2.15cm,headheight=14pt]{geometry}
+\usepackage{xcolor}
+\usepackage{setspace}
+\usepackage{microtype}
+\usepackage{booktabs,longtable,array}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{titlesec}
+\usepackage{etoolbox}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{navy}{HTML}{12354F}
+\definecolor{teal}{HTML}{0F6B6D}
+\definecolor{orange}{HTML}{D86732}
+\definecolor{ink}{HTML}{24323D}
+\definecolor{muted}{HTML}{64727D}
+\definecolor{pale}{HTML}{EEF3F5}
+
+\linespread{1.32}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.25em}
+\setlength{\emergencystretch}{3em}
+\setlist[itemize]{leftmargin=1.8em,itemsep=0.25em,topsep=0.35em}
+\setlist[enumerate]{leftmargin=2em,itemsep=0.25em,topsep=0.35em}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=teal,
+  urlcolor=teal,
+  citecolor=teal,
+  pdftitle={朱哥讲金融：数字金融知识库},
+  pdfauthor={Knowledge base compiled for Darren Cui},
+  pdfsubject={CBDC, e-CNY, stablecoins, payments, AML, blockchain and Web3}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\sffamily\small\textcolor{muted}{数字金融知识库}}
+\fancyhead[R]{\sffamily\small\textcolor{muted}{\leftmark}}
+\fancyfoot[C]{\sffamily\small\textcolor{muted}{\thepage\ / \pageref{LastPage}}}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{gray!40}\leaders\hrule height \headrulewidth\hfill}}
+
+\titleformat{\chapter}[display]
+  {\normalfont\sffamily\bfseries\color{navy}}
+  {\filleft\small\color{orange}\MakeUppercase{\chaptertitlename}\ \thechapter}
+  {0.45em}
+  {\Huge}
+\titlespacing*{\chapter}{0pt}{-18pt}{24pt}
+\titleformat{\section}
+  {\normalfont\sffamily\Large\bfseries\color{navy}}
+  {\thesection}{0.65em}{}
+\titleformat{\subsection}
+  {\normalfont\sffamily\large\bfseries\color{teal}}
+  {\thesubsection}{0.55em}{}
+
+\AtBeginEnvironment{longtable}{\small}
+\setlength{\LTcapwidth}{\textwidth}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\pandocbounded}[1]{#1}
+
+\begin{document}
+
+\frontmatter
+\begin{titlepage}
+  \thispagestyle{empty}
+  \centering
+  \vspace*{1.4cm}
+  {\color{orange}\rule{\textwidth}{4pt}}\par
+  \vspace{1.2cm}
+  {\sffamily\bfseries\color{muted}\Large DIGITAL FINANCE KNOWLEDGE BASE\par}
+  \vspace{1.1cm}
+  {\sffamily\bfseries\color{navy}\fontsize{34}{43}\selectfont
+  朱哥讲金融\par}
+  \vspace{0.12cm}
+  {\sffamily\bfseries\color{navy}\fontsize{27}{36}\selectfont
+  数字金融知识库\par}
+  \vspace{1.1cm}
+  {\color{navy}\rule{0.72\textwidth}{1.2pt}\par}
+  \vspace{1.1cm}
+  {\Large CBDC / 数字人民币 / CBETS / 稳定币\par}
+  \vspace{0.3cm}
+  {\Large 反洗钱 / 跨境支付 / 区块链 / Web3\par}
+  \vfill
+  \begin{minipage}{0.82\textwidth}
+    \centering
+    \color{muted}
+    主题化整理与知识蒸馏\\
+    资料快照：2026-11-16\\
+    生成日期：2026-11-17
+  \end{minipage}\par
+  \vspace{1cm}
+  {\color{orange}\rule{\textwidth}{2pt}}\par
+\end{titlepage}
+
+\chapter*{阅读说明}
+\addcontentsline{toc}{chapter}{阅读说明}
+这份文档将公开公众号文章按主题重新组织，重点保留可复用的概念、流程、控制点和风险边界，并删去重复铺垫与宣传性内容。
+
+\begin{center}
+\setlength{\fboxsep}{12pt}
+\colorbox{pale}{\begin{minipage}{0.88\textwidth}
+\textcolor{navy}{\textbf{使用边界}}\par\medskip
+本文是行业观察与产品知识整理，不是监管法规原文，也不构成法律、投资或合规审查意见。涉及牌照、监管口径、产品状态、储备金额与统计数字时，应以文末来源和最新官方披露为准。
+\end{minipage}}
+\end{center}
+
+\tableofcontents
+\clearpage
+
+\mainmatter
+\input{body}
+
+\backmatter
+\chapter*{结束语}
+\addcontentsline{toc}{chapter}{结束语}
+这份知识库的长期价值不在于把文章越堆越多，而在于形成一张稳定的判断地图：先区分货币、账户、网络、钱包和资产权利，再判断业务场景与合规边界，最后才讨论技术选型。
+
+\vfill
+\begin{center}
+{\sffamily\color{muted}资料快照 2026-11-16\par}
+\end{center}
+
+\end{document}
